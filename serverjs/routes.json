@@ -1,0 +1,16 @@
+{
+  "/": {
+    "handler": "main",
+    "action": "index"
+  },
+
+  "/planet": {
+    "handler": "main",
+    "action": "planet"
+  },
+
+  "/people/{id}/": {
+    "handler": "main",
+    "action": "getPeople"
+  }
+}

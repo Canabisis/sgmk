@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SWAPI for SGMK</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div id="app">
+
+        <h1>What are you looking for?</h1>
+        <div class="butt">
+            <a href="#" v-on:click="getAllSWPersons()"><img src="images/person.png" alt=""></a>
+            <a href="#" v-on:click="getAllSWPlanets()"><img src="images/planet.png" alt=""></a>
+            <a href="#" v-on:click="getAllSWStarships()"><img src="images/starchip.png" alt=""></a>
+        </div>
+
+        <div class="info">
+            <div class="objects" v-if="show == 1" >
+                <ul class="list5a">
+                    <li v-for="item in swpersons.results">
+                        <a href="#" v-on:click="getInfoPerson(item.url)">{{item.name}}</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="objects" v-else-if="show == 2">
+                <ul class="list5a">
+                    <li v-for="item in swplanets.results">
+                        <a href="#" v-on:click="getInfoPlanet(item.url)">{{item.name}}</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="objects" v-else-if="show == 3">
+                <ul class="list5a">
+                    <li v-for="item in swstarships.results">
+                        <a href="#" v-on:click="getInfoStarship(item.url)">{{item.name}}</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="images" v-if="showw == 1">
+                <img :src="url1" alt="">
+            </div>
+
+            <div class="details" v-if="showw == 1">
+                <p>Name : <span>{{infoperson.mass}}</span></p>
+                <p>Gender : <span>{{infoperson.gender}}</span></p>
+                <p>Birth year : <span>{{infoperson.birth_year }}</span></p>
+                <p>Eye color : <span>{{infoperson.eye_color }}</span></p>
+                <p>Hair color : <span>{{infoperson.hair_color }}</span></p>
+                <p>Skin color : <span>{{infoperson.skin_color }}</span></p>
+                <p>Height : <span>{{infoperson.height }}</span></p>
+                <p>Mass : <span>{{infoperson.mass }}</span></p>
+
+            </div>
+            <div class="details" v-else-if="showw == 2">
+                <p>{{infoplanet.diameter }}</p>
+                <p>{{infoplanet.rotation_period  }}</p>
+                <p>{{infoplanet.climate  }}</p>
+            </div>
+            <div class="details"  v-else-if="showw == 3">
+                <p>{{infostarship.length }}</p>
+                <p>{{infostarship.model  }}</p>
+                <p>{{infostarship.hyperdrive_rating  }}</p>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <script src="js/bootstrap.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/vue.js"></script>
+    <script src="js/vueapp.js"></script>
+</body>
+</html>
