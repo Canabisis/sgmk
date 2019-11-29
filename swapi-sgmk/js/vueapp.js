@@ -33,7 +33,6 @@ var app = new Vue({
                     this.swplanets=data;
                 });
             this.show = 2;
-            this.showw = 2;
         },
         getAllSWStarships(){
             this.showw = 0;
@@ -44,6 +43,7 @@ var app = new Vue({
                 });
             this.show = 3;
         },
+
         getInfoPerson(url){
             this.showw = 0;
             axios.get(url).then(function (response) {

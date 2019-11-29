@@ -59,14 +59,18 @@
                              <p>Skin color : <span>{{infoperson.skin_color }}</span></p>
                              <p>Height : <span>{{infoperson.height }}</span></p>
                              <p>Mass : <span>{{infoperson.mass }}</span></p>
-
                          </div>
                          <div class="details" v-else-if="showw == 2">
-                             <p>{{infoplanet.diameter }}</p>
-                             <p>{{infoplanet.rotation_period  }}</p>
-                             <p>{{infoplanet.climate  }}</p>
+                             <p>Name : <span>{{infoplanet.name}}</span></p>
+                             <p>Climate : <span>{{infoplanet.climate}}</span></p>
+                             <p>Diameter : <span>{{infoplanet.diameter }}</span></p>
+                             <p>Rotation period : <span>{{infoplanet.rotation_period}}</span></p>
+                             <p>Terrain : <span>{{infoplanet.terrain }}</span></p>
+                             <p>Surface water : <span>{{infoplanet.surface_water }}</span></p>
+                             <p>Population : <span>{{infoplanet.population }}</span></p>
+                             <p>Orbital period : <span>{{infoplanet.orbital_period }}</span></p>
                          </div>
-                         <div class="details"  v-else-if="showw == 3">
+                         <div class="details" v-else-if="showw == 3">
                              <p>{{infostarship.length }}</p>
                              <p>{{infostarship.model  }}</p>
                              <p>{{infostarship.hyperdrive_rating  }}</p>
