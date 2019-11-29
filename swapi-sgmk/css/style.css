@@ -17,28 +17,51 @@ h1 {
 }
 
 .butt a {
-    padding: 10px;
+    padding: 10px 40px;
 }
 
+.content {
+    /*width: 50%;*/
+    margin: auto;
+}
 
+.cell1 {
+    width: 400px;
+}
+
+.cell2 {
+    width: 250px;
+}
+
+.cell3 {
+    width: 350px;
+}
+
+.cell4 {
+    width: 350px;
+}
+
+.cell {
+    width: 300px;
+}
 
 .info {
-    display: grid;
-    grid-template-columns: 30% 13% 17% 20%;
-    margin: 0 auto;
-    justify-items: baseline;
+    vertical-align: top;
 }
 
 .objects {
+    min-width: 15%;
     padding: 10px;
-    grid-column: 2;
-    grid-row: 1;
+    /*grid-column: 2;*/
+    /*grid-row: 1;*/
 }
 
 .images {
+    min-width: 20%;
     padding: 10px;
-    grid-column: 3;
-    grid-row: 1;
+
+    /*grid-column: 3;*/
+    /*grid-row: 1;*/
 }
 
 .images img{
@@ -47,10 +70,11 @@ h1 {
 }
 
 .details {
+    min-width: 15%;
     padding: 10px;
-    grid-column: 4;
-    grid-row: 1;
-    justify-items: left;
+    /*grid-column: 4;*/
+    /*grid-row: 1;*/
+    /*justify-items: left;*/
 }
 
 .details p {
@@ -100,6 +124,5 @@ h1 {
     color: #fff;
     text-decoration: none;
     user-select: none;
-    padding: 5px 30px;
     outline: none;
 }
