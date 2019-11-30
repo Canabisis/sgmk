@@ -7,9 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
     <div id="app">
-
         <h1>What are you looking for?</h1>
         <div class="butt">
             <a href="#" v-on:click="getAllSWPersons()"><img src="images/person.png" alt=""></a>
@@ -46,9 +44,15 @@
                      </td>
                     <td class="cell3">
                          <div class="images" v-if="showw == 1">
-                         <img :src="url1" alt="">
-                     </div>
-                     </td>
+                            <img :src="imgurl" alt="">
+                         </div>
+                        <div class="images" v-if="showw == 2">
+                            <img :src="imgurl" alt="">
+                        </div>
+                        <div class="images" v-if="showw == 3">
+                            <img :src="imgurl" alt="">
+                        </div>
+                    </td>
                     <td class="cell4">
                          <div class="details" v-if="showw == 1">
                              <p>Name : <span>{{infoperson.mass}}</span></p>
@@ -71,22 +75,20 @@
                              <p>Orbital period : <span>{{infoplanet.orbital_period }}</span></p>
                          </div>
                          <div class="details" v-else-if="showw == 3">
-                             <p>{{infostarship.length }}</p>
-                             <p>{{infostarship.model  }}</p>
-                             <p>{{infostarship.hyperdrive_rating  }}</p>
+                             <p>Name : <span>{{infostarship.name}}</span></p>
+                             <p>Starship class : <span>{{infostarship.starship_class}}</span></p>
+                             <p>Length : <span>{{infostarship.length }}</span></p>
+                             <p>Model : <span>{{infostarship.model }}</span></p>
+                             <p>Hyperdrive_rating : <span>{{infostarship.hyperdrive_rating  }}</span></p>
+                             <p>Passengers : <span>{{infostarship.passengers }}</span></p>
+                             <p>Max atmosphering speed : <span>{{infostarship.max_atmosphering_speed }}</span></p>
+                             <p>Manufacturer : <span>{{infostarship.manufacturer }}</span></p>
                          </div>
                      </td>
                     <td class="cell"></td>
                 </tr>
             </tbody>
         </table>
-
-
-
-
-
-
-
     </div>
 
     <script src="js/bootstrap.js"></script>

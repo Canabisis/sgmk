@@ -7,7 +7,8 @@ class Router {
     for (let route in routes) {
       if (route.match(pattern)) {
 
-        route = route.split('/'), path = path.split('/');
+        route = route.split('/');
+        path = path.split('/');
         console.log("Debug1: " + path);
         if (route.length === path.length) {
           let parameters = {};

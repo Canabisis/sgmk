@@ -10,9 +10,10 @@ var app = new Vue({
         infostarship:[],
         show: 0,
         showw: 0,
-        imgserver: "http://localhost:8888/people/",
-        img: 0,
-        url1: 0
+        imgpeoples: "http://localhost:3000/peoples/",
+        imgplanets: "http://localhost:3000/planets/",
+        imgstarships: "http://localhost:3000/starships/",
+        imgurl: 0
     },
 
     methods:{
@@ -50,21 +51,24 @@ var app = new Vue({
                 app.infoperson = response.data;
             });
             this.showw = 1;
-            app.img = this.url1 = this.imgserver + url.substr(url.length - 2);
+            this.imgurl = this.imgpeoples + (url.substr(url.length - 2)).substr(0, 1);
         },
         getInfoPlanet(url){
             this.showw = 0;
             axios.get(url).then(function (response) {
                 app.infoplanet = response.data
             });
-            this.showw = 2
+            this.showw = 2;
+            this.imgurl = this.imgplanets + (url.substr(url.length - 2)).substr(0, 1);
         },
         getInfoStarship(url){
             this.showw = 0;
             axios.get(url).then(function (response) {
                 app.infostarship = response.data
             });
-            this.showw = 3
+            this.showw = 3;
+            app.img = this.url1 = this.infostarship + url.substr(url.length - 2);
+            this.imgurl = this.imgstarships + (url.substr(url.length - 2)).substr(0, 1);
         },
     }
 });

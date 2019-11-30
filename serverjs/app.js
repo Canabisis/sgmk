@@ -39,4 +39,4 @@ class Server {
   }
 }
 
-Server.start(8888);
+Server.start(3000);
